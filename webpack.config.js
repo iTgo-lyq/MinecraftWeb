@@ -4,7 +4,10 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    'index':'./src/index.js',
+    'ind':'./src/index.js'
+  },
   devtool: 'eval-source-map',
   devServer: {
     contentBase: './dist',
@@ -13,7 +16,8 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Minecraft'
+      title: 'Minecraft',
+      template: './index.html'
     }),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
