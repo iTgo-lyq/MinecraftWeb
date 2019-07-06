@@ -1,12 +1,12 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
   entry: {
-    'index':'./src/index.js',
-    'ind':'./src/index.js'
+    'index':'./src/index.js'
   },
   devtool: 'eval-source-map',
   devServer: {
@@ -21,6 +21,12 @@ module.exports = {
     }),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
+    new CopyWebpackPlugin([
+      {
+        from:__dirname+'/static',
+        to:__dirname+'/dist'
+      }
+    ])
   ],
   output:{
     filename: '[name].bundle.js',
