@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "lodash": "^4.17.11",
-    "three": "^0.106.2",
+    "three": "^0.125.0",
     "threejs-orbit-controls": "^1.0.3"
   }
 }
